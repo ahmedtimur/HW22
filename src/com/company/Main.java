@@ -15,13 +15,12 @@ public class Main {
             char a;
 
             for (a = 'A'; a <= 'Z'; ++a ) {                                   // Upper case letters from A to Z
-                writer.write(a + "" + Character.toLowerCase(a) + " ");
+                writer.write(a + "" + Character.toLowerCase(a) + " \n");
             }
 
-            writer.write("\n");
 
-            for(int i = 1; i <= 10; i++) {                                    // Numbers from 1 to 10
-                writer.write(i + " ");
+            for(int i = 0; i < 10; i++) {                                    // Numbers from 1 to 10
+                writer.write(i + " \n");
             }
         }
         catch (IOException e) {
@@ -31,8 +30,10 @@ public class Main {
 
         try(FileReader reader = new FileReader("File.txt")) {         // Reading the File.txt
             Scanner scanner = new Scanner(reader);
+            int counter = 0;
             while (scanner.hasNextLine()) {
-                System.out.println(scanner.nextLine());
+                counter++;
+                System.out.println(counter + ": " + scanner.nextLine() + " \n");
             }
         }
         catch (FileNotFoundException e) {
